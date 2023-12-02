@@ -1,0 +1,30 @@
+nav a{
+    margin: 20px;
+    border: 1px solid lightblue;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(246, 203, 139);
+}
+.header-section{
+    /* margin-top: 50px; */
+    display: flex;
+    justify-content: space-between;
+}
+.nav-div{
+    margin: 0px 100px 0px 100px;
+}
+button{
+    text-decoration: none;
+    background: linear-gradient(rgb(23, 221, 178), rgba(255, 99, 71, 0.699));
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+}
+.text-div{
+   
+    background: linear-gradient(rgba(162, 221, 23, 0.789), rgba(255, 71, 218, 0.669));
+    border-radius: 5px;
+   padding: 0px 8px 0px 8px;
+    font-size: 15px;
+}

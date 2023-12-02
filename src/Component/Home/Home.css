@@ -1,0 +1,31 @@
+.home-div-info{
+    display: flex;
+    /* justify-content: space-between; */
+   
+    
+
+}
+.home-div-image img{
+    /* margin-left: 10%; */
+    width: 98%;
+
+
+}
+.home-div-text{
+   
+    margin-top: 5%;
+    margin-left: 10%;
+   
+}
+.home-div-text h1{
+    font-size: 40px;
+    line-height: 0.9;
+}
+.job-catagory-div{
+    margin-top: 100px;
+}
+.job-catagory-div p{
+ 
+ display: flex;
+ justify-content: center;
+}
