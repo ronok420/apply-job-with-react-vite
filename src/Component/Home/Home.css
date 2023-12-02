@@ -14,13 +14,16 @@
 .home-div-text{
    
     margin-top: 5%;
-    margin-left: 10%;
+    margin-left: 8%;
    
 }
 .home-div-text h1{
     font-size: 40px;
     line-height: 0.9;
 }
+
+
+/* second div style */
 .job-catagory-div{
     margin-top: 100px;
 }
@@ -28,4 +31,9 @@
  
  display: flex;
  justify-content: center;
+}
+.logo-div-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 8% 0px 8%;
 }

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img from '../../assets/images/user.png';
 import './Home.css'
+import JobCatagories from '../JobCatagories/JobCatagories';
+
+
 
 const Home = () => {
+    const [catagory,setCatagory]=useState([]);
+    useEffect(()=>{
+        fetch('categories.json')
+        .then(res => res.json())
+        .then(data => setCatagory(data))
+    },[])
     return (
         <section>
             <div className='home-div-info'>
@@ -10,7 +19,7 @@ const Home = () => {
                     <h1>One Step</h1>
                     <h1>Closer To YOur</h1>
                     <h1>Dream Job</h1>
-                    <p style={{width:'50%'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint distinctio dolore quos maxime reiciendis fugit iste, quisquam ratione quod sequi.</p>
+                    <p style={{ width: '50%' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint distinctio dolore quos maxime reiciendis fugit iste, quisquam ratione quod sequi.</p>
                     <button>Get Started</button>
                 </div>
                 <div className='home-div-image'>
@@ -20,14 +29,15 @@ const Home = () => {
             </div>
 
             <div className='job-catagory-div'>
-                <h1 style={{display:'flex',justifyContent:'center'}}>Job Catagory List</h1>
+                <h1 style={{ display: 'flex', justifyContent: 'center' }}>Job Catagory List</h1>
                 <p>Eplore thousands of job opportunities with all the information you need it's your future</p>
 
-                <div className='logo-div'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div className='logo-div-container'>
+                    {
+                        catagory.map(ct => <JobCatagories catagory={ct} key={ct.id}
+                        ></JobCatagories>)
+                    }
+                 
 
                 </div>
 
