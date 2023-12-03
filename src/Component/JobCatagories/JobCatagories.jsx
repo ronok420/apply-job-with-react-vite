@@ -17,7 +17,7 @@ const logos = {
 
 const JobCatagories = ({catagory}) => {
     const {category_name,availability,logo}=catagory;
-    console.log(catagory);
+    // console.log(catagory);
     return (
         <div className='single-logo-div'>
             <div style={{margin:'20px 0 20px 20px'}}>

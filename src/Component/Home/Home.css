@@ -37,3 +37,12 @@
     justify-content: space-between;
     margin: 0px 8% 0px 8%;
 }
+
+
+/* featured div style */
+.feature-job-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 7% 0 7%;
+
+}
