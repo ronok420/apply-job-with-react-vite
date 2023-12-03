@@ -64,8 +64,14 @@ const Home = () => {
                             key={job.id} job={job}
                         ></FeaturedJobs>)
                     }
+                  
+                   
 
                 </div>
+                <div style={{display:'flex', justifyContent:'center'}}>
+                    <button style={{display:'flex', width:'15%',justifyContent:'center'}}>Show All Jobs</button>
+                        
+                    </div>
 
             </div>
         </section>

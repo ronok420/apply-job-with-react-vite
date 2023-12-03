@@ -1,5 +1,7 @@
 import React from 'react';
 import './FeaturedJobs.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocation,faDollarSign } from '@fortawesome/free-solid-svg-icons'
 
 
 import google from '../../assets/logo/google.png';
@@ -7,31 +9,39 @@ import netflix from '../../assets/logo/netflix.png';
 import tesla from '../../assets/logo/tesla.png';
 
 const logos = {
-    'google.png':google,
+    'google.png': google,
     'netflix.png': netflix,
     'tesla.png': tesla,
-  
-  };
+
+};
 
 
 
-const FeaturedJobs = ({job}) => {
-    const {job_title,logo,company_name,job_type,remote_or_onsite,location,salary} = job;
+const FeaturedJobs = ({ job }) => {
+    const { job_title, logo, company_name, job_type, remote_or_onsite, location, salary } = job;
     return (
         <div className='single-featured-div'>
-           <img src={logos[logo]} alt="" />
-           <h3>{job_title}</h3>
-           <p>{company_name}</p>
+            <div className='inside-div-job-info'>
+                <img src={logos[logo]} alt="" />
+                <h3>{job_title}</h3>
+                <p>{company_name}</p>
 
-           <div style={{display:'flex'}}>
-            <p>{job_type}</p>
-            <p>{remote_or_onsite}</p>    
-           </div>
-           <div>
-           <p>{location}</p>
-            <p>{salary}</p>
-           </div>
-           <button>View Details</button>
+                <div style={{ display: 'flex' }}>
+                    <a style={{marginRight:'10px', border:'1px solid lightblue',padding:"0px 10px 0px 10px",lineHeight:'1'}} href=""><p>{job_type}</p></a>
+                    <a style={{marginRight:'10px', border:'1px solid lightblue',padding:"0px 10px 0px 10px",lineHeight:'1'}} href=""><p>{remote_or_onsite}</p></a>
+
+                </div>
+                <div style={{ display: 'flex' }}>
+                    <p style={{marginRight:'17px'}}><FontAwesomeIcon icon={faLocation} />{location}</p>
+                    <p><FontAwesomeIcon icon={faDollarSign} />Salary:{salary}</p>
+                </div>
+                <button>View Details</button>
+
+            </div>
+
+          
+
+
         </div>
     );
 };
