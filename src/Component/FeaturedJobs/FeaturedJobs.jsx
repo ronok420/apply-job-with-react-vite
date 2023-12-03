@@ -17,8 +17,9 @@ const logos = {
 
 
 
-const FeaturedJobs = ({ job }) => {
+const FeaturedJobs = ({ job,jobs }) => {
     const { job_title, logo, company_name, job_type, remote_or_onsite, location, salary } = job;
+    console.log(jobs.length);
     return (
         <div className='single-featured-div'>
             <div className='inside-div-job-info'>

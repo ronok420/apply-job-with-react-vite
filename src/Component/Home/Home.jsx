@@ -7,6 +7,7 @@ import FeaturedJobs from '../FeaturedJobs/FeaturedJobs';
 const Home = () => {
     const [catagory, setCatagory] = useState([]);
     const [jobs,setJobs]=useState([]);
+    const [showAllJobs, setShowAllJobs] = useState(false);
 
     useEffect(() => {
         fetch('categories.json')
@@ -44,7 +45,7 @@ const Home = () => {
 
                 <div className='logo-div-container'>
                     {
-                        catagory.map(ct => <JobCatagories catagory={ct} key={ct.id}
+                        catagory.map(ct => <JobCatagories catagory={ct} key={ct.id} 
                         ></JobCatagories>)
                     }
 
@@ -59,17 +60,23 @@ const Home = () => {
 
 
                 <div className="feature-job-container">
-                    {
+                    {showAllJobs ?
                         jobs.map(job => <FeaturedJobs 
-                            key={job.id} job={job}
-                        ></FeaturedJobs>)
+                            key={job.id} job={job} jobs={jobs}
+                        ></FeaturedJobs>) :
+                        jobs.slice(0, 4).map(job => (
+                            <FeaturedJobs key={job.id} job={job} jobs={jobs} />
+                        ))
+                        
+
+                       
                     }
                   
                    
 
                 </div>
                 <div style={{display:'flex', justifyContent:'center'}}>
-                    <button style={{display:'flex', width:'15%',justifyContent:'center'}}>Show All Jobs</button>
+                    <button onClick={()=>setShowAllJobs(!showAllJobs)}  style={{display:'flex', width:'15%',justifyContent:'center'}}> {showAllJobs ? 'See Limited Jobs' : 'Show All Jobs'}</button>
                         
                     </div>
 
