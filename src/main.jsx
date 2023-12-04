@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 import Root from './Component/Root/Root.jsx';
 import Home from './Component/Home/Home.jsx';
-import Job from './Component/Job/Job.jsx';
+
 import AppliedJob from './Component/AppliedJob/AppliedJob.jsx';
 import Statitstics from './Component/Statistics/Statitstics.jsx';
+import JobDetails from './Component/JobDetails/JobDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,17 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "/job",
-        element: <Job></Job>
+        path: "/JobDetails/:id",
+        element: <JobDetails></JobDetails>,
+        // loader: async ({ params }) => {
+        //   const jobId = params.id;
+        //   // Fetch job details using the jobId
+        //   const response = await fetch('jobs.json');
+        //   const jobDetails = await response.json();
+         
+        //   console.log(jobDetails);
+        // }
+        loader: ({params}) => fetch('jobs.json')
       },
       {
         path: "/applied",
@@ -39,7 +49,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
 
