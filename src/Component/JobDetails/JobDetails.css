@@ -1,0 +1,26 @@
+.banner-div img{
+    width: 20%;
+}
+.banner-div{
+  margin-top: 50px;
+    display: flex;
+    margin-bottom: 100px;
+}
+.job-container{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    
+    margin: 0 5% 0 5%;
+}
+.job-details-cart{
+    border: 1px solid lightblue;
+  
+    
+    background: linear-gradient(90deg, rgba(254, 177, 126, 0.264) 0%,rgba(152, 115, 255, 0.132)) ;
+}
+.job-details-info{
+    margin-right: 10%;
+}
+.inner-job-details-cart-info{
+    margin: 20px;
+}
