@@ -41,12 +41,7 @@ const FeaturedJobs = ({ job, jobs, handleJobDetails }) => {
                     <button onClick={() => handleJobDetails(job)}>View Details</button>
                 </Link>
 
-                {/* <Link onClick={() => handleJobDetails(job)} to={{
-                    pathname: "/JobDetails",
-                    state: { jobinfo: jobinfo }
-                }}>
-                    View Job Details
-                </Link> */}
+              
 
             </div>
 

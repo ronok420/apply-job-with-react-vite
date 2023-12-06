@@ -18,6 +18,7 @@ const JobDetails = () => {
     // const exist = job.find(jb => jb.id === parsedId );
     const exist = Array.isArray(job) && job.find(jb => jb.id === parseInt(id));
     console.log(exist);
+    const contact_information = exist?.contact_information || {};
 
     const handleApplyJob = ()=>{
         
@@ -63,11 +64,12 @@ const JobDetails = () => {
                                 <h4>Contact Information</h4>
                                 <div style={{ border: '1px solid black' }}></div>
                                 <p><span style={{ fontWeight: 'bold' }}><FontAwesomeIcon icon={faPhone} /> Phone:</span>
-                                    {exist.contact_information.phone}</p>
+                                    {/* {exist.contact_information.phone}</p> */}
+                                    {contact_information.phone}</p>
                                 <p><span style={{ fontWeight: 'bold' }}><FontAwesomeIcon icon={faVoicemail} />email:</span>
-                                    {exist.contact_information.email}</p>
+                                    {contact_information.email}</p>
                                 <p><span style={{ fontWeight: 'bold' }}><FontAwesomeIcon icon={faLocation} />Adress:</span>
-                                    {exist.contact_information.address}</p>
+                                    {contact_information.address}</p>
                             </div>
                             
                         </div>
