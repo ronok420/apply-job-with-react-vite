@@ -3,7 +3,9 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import img from '../../assets/images/bg1.png'
 import './JobDetails.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import toast, { Toaster } from 'react-hot-toast';
 import { faLocation, faDollarSign ,faPhone,faVoicemail,faBuilding} from '@fortawesome/free-solid-svg-icons'
+import { saveJobApplication } from '../../utility/localstorage';
 
 
 const JobDetails = () => {
@@ -11,11 +13,18 @@ const JobDetails = () => {
     const { id } = useParams();
     console.log(id);
     console.log(job);
-    //    const parsedId = parseInt(id, 10);
+       const parsedId = parseInt(id, 10);
 
     // const exist = job.find(jb => jb.id === parsedId );
     const exist = Array.isArray(job) && job.find(jb => jb.id === parseInt(id));
     console.log(exist);
+
+    const handleApplyJob = ()=>{
+        
+        saveJobApplication(parsedId);
+        toast('You have applied successfully');
+
+    }
     return (
 
         <section style={{ margin: '0 7% 0 7%' }}>
@@ -63,9 +72,7 @@ const JobDetails = () => {
                             
                         </div>
 
-
-
-                        <button style={{marginTop:'20px',width:'100%'}}>Apply Now</button>
+                        <button onClick={handleApplyJob} style={{marginTop:'20px',width:'100%'}}>Apply Now</button>
 
                     </div>
 
@@ -80,6 +87,7 @@ const JobDetails = () => {
 
 
             </div>
+            <Toaster />
 
         </section>
 
